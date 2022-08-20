@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pixelart</title>
+</head>
+
+<body>
+    <h1>Pixel art converter in Scala.js</h1>
+    <input type="file" name="file" id="file" pattern=".*.jpg$">
+    <hr />
+    <img style="width: 500px;" />
+    <canvas id="orig" style="width: 500px; image-rendering: pixelated; display: none;"></canvas>
+    <canvas id="result" style="width: 500px; border-style: solid; image-rendering: pixelated;"></canvas>
+    <hr />
+    <p>Pixel art settings:</p>
+    <div>
+        <input type="range" id="k" name="k" min="1" max="256" value="32">
+        <label id="klabel" for="k">Color size (32)</label>
+    </div>
+    <div>
+        <input type="range" id="ds" name="ds" min="1" max="32" value="4">
+        <label id="dslabel" for="ds">Downscale (4x)</label>
+    </div>
+    <button id="conv" style="height: 100px; width: 400px;">Convert</button>
+
+    <!-- Include Scala.js compiled code -->
+    <script type="text/javascript" src="./target/scala-2.13/k-means-dot-illust-fastopt/main.js"></script>
+</body>
+
+</html>
